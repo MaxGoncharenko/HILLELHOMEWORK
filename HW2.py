@@ -24,18 +24,28 @@ P.S. На екран має бути виведено лише одне пові
 
 
 print('Касир в кінотеватрі')
-
-
-age = int(input('Скільки вам років?'))
-if age<7:
-    print('Де твої батьки?')
-elif age<16 and age>=7:
-    print('Це фільм для дорослих!')
-elif age%10 == 7:
-    print('Вам сьогодні пощастить!')
-elif age>65:
-    print('Покажіть пенсійне посвідчення!')
-elif age >= 16 and age <=65:
-    print('Один квиток - 100 грн')
+age = (input('Скільки вам років?'))
+if age.isdigit():
+    int(age)
+    if int(age) < 7 and int(age)>0:
+     print('Де твої батьки?')
+if age.isdigit():
+    int(age)
+    if int(age) < 16 and int(age) > 7:
+     print('Це фільм для дорослих!')
+if age.startswith('7') or age.endswith('7'):
+    int(age)
+    if int(age)>0:
+     print('Вам сьогодні пощастить!')
+if age.isdigit():
+    int(age)
+    if int(age) > 65 and int(age)%10 !=7 and int(age)!=70:
+     print("Покажіть пенсійне посвідчення!")
+if age.isalpha():
+    print('Error')
+if age.startswith('-'):
+    int(age)
+    if int(age) <= 0:
+     print('You entered wrong information!')
 else:
     print('А білетів вже немає!')
